@@ -5,6 +5,9 @@ There are two methods to POST information from rebels using two different endpoi
 One of them accepts a List of Strings (as required) and I decided to implement another one
 which -for me- makes more sense, that accepts a JSON format with name:-- , planet: -- 
 
+!!Both endpoints works whatever you send (List or json) but make sure you choose the correct endpoint 
+so it calls the correct method to read a list or a json format. Otherwise it will save rebels as null!!
+
 Also, I decided to implement a method that read and return the information from Rebels... /api/getRebelInfo
 since it would'nt be usefull at all if we can't do that...
 
