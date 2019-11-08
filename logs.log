@@ -741,3 +741,11 @@ com.ssiconcatel.test3.controller.RestController#testApi() mapped.
 2019-11-08 23:26:16.468  INFO 17556 --- [http-nio-8080-exec-3] c.s.test3.controller.RestController      : Entering testApi
 2019-11-08 23:26:22.281  INFO 17556 --- [http-nio-8080-exec-4] c.s.test3.controller.RestController      : Entering getRebelInfo...
 2019-11-08 23:26:22.282  INFO 17556 --- [http-nio-8080-exec-4] c.s.test3.controller.RestController      : Entering getRebelInfo Service
+2019-11-08 23:38:54.150  INFO 17556 --- [http-nio-8080-exec-9] c.s.test3.controller.RestController      : Entering addRebel API
+2019-11-08 23:38:54.150  INFO 17556 --- [http-nio-8080-exec-9] c.s.test3.controller.RestController      : Entering addRebel service
+2019-11-08 23:39:00.576  INFO 17556 --- [http-nio-8080-exec-10] c.s.test3.controller.RestController      : Entering addRebel API
+2019-11-08 23:39:00.577  INFO 17556 --- [http-nio-8080-exec-10] c.s.test3.controller.RestController      : Entering addRebel service
+2019-11-08 23:39:10.701  INFO 17556 --- [http-nio-8080-exec-1] c.s.test3.controller.RestController      : Entering addRebel API
+2019-11-08 23:39:10.702  INFO 17556 --- [http-nio-8080-exec-1] c.s.test3.controller.RestController      : Entering addRebel service
+2019-11-08 23:39:18.485  INFO 17556 --- [http-nio-8080-exec-2] c.s.test3.controller.RestController      : Entering addRebel API
+2019-11-08 23:39:18.487  INFO 17556 --- [http-nio-8080-exec-2] c.s.test3.controller.RestController      : Entering addRebel service
