@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
+import java.io.IOException;
 import java.util.List;
 
 @org.springframework.web.bind.annotation.RestController
@@ -27,7 +28,7 @@ public class RestController {
     public String testApi(){
         logger.info("Entering testApi");
         try{
-            return "Api OK";
+            return service.testApi();
         }catch (Exception e) {
             logger.error("Error testApi:" + e);
             return "Error: " + e.toString();
@@ -64,7 +65,7 @@ public class RestController {
         logger.info("Entering getRebelInfo...");
         try{
             return service.getRebelInfoService();
-        }catch (FileNotFoundException e){
+        }catch (IOException e){
             logger.error("Error getting rebel info:  " + e);
             return e.toString();
         }

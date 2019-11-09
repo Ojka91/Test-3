@@ -22,6 +22,10 @@ public class Service {
 
     Logger logger = LoggerFactory.getLogger(RestController.class);
 
+    public String testApi(){
+        return "Api OK";
+    }
+
     //add rebel by json
     public ResponseEntity<Object> addRebel(Rebel rebelInfo) throws IOException{
         logger.info("Entering addRebel service");
@@ -30,31 +34,35 @@ public class Service {
             Date currentDate = new Date();
             rebelDocumentation.write("Rebel " + rebelInfo.getName() + " on " + rebelInfo.getPlanet() + " at " + currentDate + "\n");
             rebelDocumentation.close();
+            logger.info("Exiting addRebel");
+
             return new ResponseEntity<>("true", HttpStatus.CREATED);
         }catch (IOException e){
             logger.error("Error saving rebel info: " +e);
-            return new ResponseEntity<>("error saving rebel info", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("error saving rebel info", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
     //add rebel by list Strings
     public ResponseEntity<Object> addRebelList(Rebel rebelInfo) throws IOException{
-        logger.info("Entering addRebel service");
+        logger.info("Entering addRebelList service");
         try{
             FileWriter rebelDocumentation = new FileWriter("C:/Personal/SII Concatel Test/test3/rebelDocumentation.txt", true);
             Date currentDate = new Date();
             rebelDocumentation.write("Rebel " + rebelInfo.getRebelInfo().get(0) + " on " + rebelInfo.getRebelInfo().get(1) + " at " + currentDate + "\n");
             rebelDocumentation.close();
+            logger.info("Exiting addRebelList");
+
             return new ResponseEntity<>("true", HttpStatus.CREATED);
         }catch (IOException e){
             logger.error("Error saving rebel info: " +e);
-            return new ResponseEntity<>("error saving rebel info", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("error saving rebel info", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
 
     //return rebel information
-    public String getRebelInfoService() throws FileNotFoundException{
+    public String getRebelInfoService() throws IOException{
         logger.info("Entering getRebelInfo Service");
         try{
             FileReader rebelInfo = new FileReader("rebelDocumentation.txt");
@@ -65,8 +73,9 @@ public class Service {
                 char letter = (char)value;
                 message += letter;
             }
+            logger.info("Exiting getRebelInfo()");
             return message;
-        }catch(IOException e){
+        }catch(FileNotFoundException e){
             logger.error("Error getRebelInfoService.." + e);
             return e.toString();
         }

@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.Assert.*;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,6 +30,8 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -58,11 +61,13 @@ class Test3ApplicationTests {
 
 	@Test
 	public void testApiTest2() throws Exception{
+		when(service.testApi()).thenReturn("Api OK");
 		mockMvc.perform(
 				get("/api")
 		)
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.content().string("Api OK"));
+		verify(restController).testApi();
 	}
 
 	@Test

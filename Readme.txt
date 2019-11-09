@@ -18,15 +18,12 @@ Both (Logs and Rebel info) are saved on the main project folder.
 It's my first time setting up a Log workflow from scratch for a project so probably I've missed some 
 configuration.
 
-Also, I'm sure there's a better approach to the error control with try-catch and the Exceptions I choosed.
-I did not want to cheat to much spending some hours to study it deeper since it's supposed we have 1 hour 
-to do the test.
 
-I can say the same for the Unit Testing part. I started by doing some manual test, testing the methods I created,
+For the Unit Testing I started by doing some manual test, testing the methods I created,
 but not as an API. I found out the MockMvc which seems a much better approach and I dived into it refactoring 
 the testing methods. But it seems I'm missing something to make it work and I will need a few hours of study.
 
-Again, I have not much free time and it's supposed to have an hour or two to complete the test, so I think
-it's fair to accept I did not solved the problem for complete this time.
-But for sure this won't last to long, I will check out deeper how to Mock an MVC these next days. I think I was pretty close!!
+Since it's supposed to have an hour or two to complete the test, I think
+it's fair to accept I did not solved the problem at 100% into that time.
+I will check out deeper how to Mock an MVC these next days. I think It was pretty close!!
  
