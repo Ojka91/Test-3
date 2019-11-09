@@ -10,6 +10,7 @@ so it calls the correct method to read a list or a json format. Otherwise it wil
 
 Also, I decided to implement a method that read and return the information from Rebels... /api/getRebelInfo
 since it would'nt be usefull at all if we can't do that...
+I used Postman to play with the API and test it.
 
 Logs are working correctly, saving INFO, WARNING, ERRORS and creating a new file each day.
 
